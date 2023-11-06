@@ -49,4 +49,9 @@ public class CategoryDefaultService implements CategoryService{
         return categoryRepository.findAll();
     }
 
+    @Override
+    public Category findCategoryById(int id) {
+        return categoryRepository.findOneCategoryById(id);
+    }
+
 }
