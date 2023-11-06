@@ -50,4 +50,13 @@ public class CategoryController {
       }
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
    }
+
+   @GetMapping("/{id}")
+   public ResponseEntity<Category> getCategoryById(@PathVariable int id){
+      Category existCategory=categoryService.findCategoryById(id);
+      if(existCategory!=null){
+         return new ResponseEntity<>(existCategory,HttpStatus.OK);
+      }
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+   }
 }
