@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FoodsAndBeveragesRepository extends JpaRepository<FoodsAndBeverages, Integer> {
-
+    FoodsAndBeverages findOneFoodsAndBeverageById(int id);
 }
